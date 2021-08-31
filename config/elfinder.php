@@ -5,7 +5,7 @@ return [
   'disks' => ['Files'],
   'route' => [
     [
-      'prefix' => 'dashboard/file-manager',
+      'prefix' => '/asd/file-manager',
       'middleware' => ['auth'],
     ],
   ],

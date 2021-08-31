@@ -9,5 +9,8 @@ class DefaultSeeder extends Seeder {
     $this->call(Roles::class);
     $this->call(Users::class);
 
+    $this->call(ConfigurationGenerals::class);
+    $this->call(ConfigurationSectionFeatures::class);
+
   }
 }

@@ -2,7 +2,7 @@
 
 Auth::routes();
 
-Route::get('/', function () { return view('pages.frontend.index'); });
+Route::get('/', 'Frontend\GlobalController@index')->name('frontend.index');
 Route::get('/home', 'HomeController@index')->name('home');
 
 
@@ -11,6 +11,9 @@ Route::get('/dashboard/file-manager', 'Backend\DashboardController@filemanager')
 Route::get('/dashboard/help-center', 'Backend\DashboardController@help_center')->name('dashboard.help-center');
 Route::get('/dashboard/logout', 'Backend\DashboardController@logout')->name('dashboard.logout');
 Route::get('/lang/{language}', 'LocalizationController@switch')->name('localization.switch');
+
+// MAIN
+require __DIR__.'/backend/system/configuration.php';
 
 // SYSTEM
 require __DIR__.'/backend/system/general.php';
