@@ -13,7 +13,9 @@ Route::get('/dashboard/logout', 'Backend\DashboardController@logout')->name('das
 Route::get('/lang/{language}', 'LocalizationController@switch')->name('localization.switch');
 
 // MAIN
+require __DIR__.'/backend/main/theme-1.php';
 require __DIR__.'/backend/main/theme.php';
+require __DIR__.'/backend/main/configuration/about.php';
 
 // SYSTEM
 require __DIR__.'/backend/system/configuration.php';

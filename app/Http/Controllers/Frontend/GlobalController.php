@@ -24,6 +24,7 @@ class GlobalController extends Controller {
     $this->url = '/dashboard/configuration';
     $this->path = 'pages.frontend';
     $this->modelGeneral = 'App\Models\Backend\System\ConfigurationGeneral';
+    $this->modelSectionAbout = 'App\Models\Backend\Main\Section\Theme_1\About';
     $this->modelSectionFeature = 'App\Models\Backend\System\ConfigurationSectionFeature';
   }
 
@@ -35,8 +36,9 @@ class GlobalController extends Controller {
 
   public function index() {
     $general = $this->modelGeneral::first();
+    $section_about = $this->modelSectionAbout::first();
     $section_feature = $this->modelSectionFeature::first();
-    return view($this->path . '.index', compact('general', 'section_feature'));
+    return view($this->path . '.index', compact('general', 'section_about', 'section_feature'))->render();
   }
 
 }

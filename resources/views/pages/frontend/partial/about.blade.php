@@ -2,8 +2,8 @@
   <div class="container" data-aos="fade-up">
     <div class="section-title">
       <h2>About</h2>
-      <h3>Find Out More <span>About Us</span></h3>
-      <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+      <h3> {!! $section_about->title !!} </h3>
+      <p> {{ $section_about->sub_title }} </p>
     </div>
 
     <div class="row">
@@ -11,10 +11,9 @@
         <img src="/assets/frontend/img/about.jpg" class="img-fluid" alt="">
       </div>
       <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-        <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+        <h3> {{ $section_about->content_title }} </h3>
         <p class="font-italic">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua.
+          {{ $section_about->content_description }}
         </p>
         <ul>
           <li>

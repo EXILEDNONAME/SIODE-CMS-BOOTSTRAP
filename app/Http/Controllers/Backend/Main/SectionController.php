@@ -9,10 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Activitylog\Models\Activity;
 
-use App\Http\Requests\Backend\Main\Theme\StoreRequest;
-use App\Http\Requests\Backend\Main\Theme\UpdateRequest;
-
-class ThemeController extends Controller {
+class SectionController extends Controller {
 
   /**
   **************************************************
@@ -23,10 +20,9 @@ class ThemeController extends Controller {
 
   public function __construct() {
     $this->middleware('auth');
-    $this->url = '/dashboard/themes';
-    $this->path = 'pages.backend.main.theme';
-    $this->model = 'App\Models\Backend\Main\Theme';
-    $this->data = $this->model::get();
+    $this->url = '/dashboard/sections';
+    $this->path = 'pages.backend.main.section';
+    $this->model = 'App\Models\Backend\Main\Section';
   }
 
   /**
@@ -36,11 +32,14 @@ class ThemeController extends Controller {
   **/
 
   public function index() {
+    if ( Auth::User()->id_theme == 1 ) { $data = $this->model::get()->where('id_theme', 1); }
+    if ( Auth::User()->id_theme == 2 ) { $data = $this->model::get()->where('id_theme', 2); }
     $model = $this->model;
     if(request()->ajax()) {
-      return DataTables::of($this->data)
+      return DataTables::of($data)
       ->rawColumns(['description'])
       ->addIndexColumn()
+      ->escapeColumns('name')
       ->make(true);
     }
     return view($this->path . '.index', compact('model'));

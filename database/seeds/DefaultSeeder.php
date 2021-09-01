@@ -6,6 +6,7 @@ class DefaultSeeder extends Seeder {
   public function run() {
 
     // Default
+    $this->call(Themes::class);
     $this->call(Roles::class);
     $this->call(Users::class);
 

@@ -13,7 +13,6 @@
           <h3 class="card-label"> {{ trans('default.page.index') }} </h3>
         </div>
         <div class="card-toolbar">
-          <a href="{{ URL::current() }}/create" class="btn btn-sm btn-icon btn-clean btn-icon-md"  data-toggle="tooltip" title="{{ trans('default.label.toolbar.create') }}"><i class="flaticon2-add-1"></i></a>
           <div class="dropdown dropdown-inline">
             <button type="button" class="btn btn-clean btn-sm btn-icon btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="flaticon-download-1"></i>
@@ -48,9 +47,7 @@
               </ul>
             </div>
           </div>
-          <div class="show" id="kt_datatable_group_action_form_2">
-            <a id="file-refresh" class="btn btn-sm btn-icon btn-clean btn-icon-md" data-toggle="tooltip" title="{{ trans('default.label.toolbar.refresh') }}"><i class="flaticon2-refresh"></i></a>
-          </div>
+          <a id="file-refresh" class="btn btn-sm btn-icon btn-clean btn-icon-md" data-toggle="tooltip" title="{{ trans('default.label.toolbar.refresh') }}"><i class="flaticon2-refresh"></i></a>
           <a class="btn btn-sm btn-icon btn-clean btn-light-md" data-card-tool="toggle"><i class="fas fa-caret-down"></i></a>
         </div>
       </div>
@@ -72,78 +69,14 @@
         </div>
         @endif
 
-        <div class="row">
-          <div class="col-lg-9">
-            <div class="row align-items-center">
-
-              <div class="col-sm-2 my-2 my-lg-0">
-                <div class="d-flex align-items-center">
-                  <select data-column="-2" class="form-control filter-active">
-                    <option value=""> - Select Active - </option>
-                    <option value="1"> Yes </option>
-                    <option value="2"> No </option>
-                  </select>
-                </div>
-              </div>
-
-              @if ( !empty($daterange) && $daterange == 'true')
-              <div class="col-md-4 my-2 my-md-0">
-                <div class="d-flex align-items-center">
-                  <label class="mr-3 mb-0 d-none d-md-block">Filter </label>
-                  <div class="input-daterange input-group" id="ex_datepicker_start">
-                    <input type="text" id="date_start" class="form-control" name="date_start" autocomplete="off">
-                    <div class="input-group-append">
-                      <span class="input-group-text">
-                        <i class="la la-ellipsis-h"></i>
-                      </span>
-                    </div>
-                    <input type="text" id="date_end" class="form-control" name="date_end" autocomplete="off">
-                  </div>
-                </div>
-              </div>
-              @endif
-
-              @stack('filter-header')
-
-              @if ( !empty($status) && $status == 'true')
-              <div class="col-md-2 my-2 my-md-0">
-                <div class="d-flex align-items-center">
-                  <select data-column="2" class="form-control filter-status">
-                    <option value=""> - {{ trans('default.label.filter-status') }} - </option>
-                    <option value="1"> {{ trans('default.label.success') }} </option>
-                    <option value="2"> {{ trans('default.label.pending') }} </option>
-                    <option value="3"> {{ trans('default.label.delivered') }} </option>
-                    <option value="4"> {{ trans('default.label.canceled') }} </option>
-                  </select>
-                </div>
-              </div>
-              @endif
-
-              <div class="col-md-1 my-1 my-md-0">
-                <div class="d-flex align-items-center">
-                  <button type="reset" name="reset" id="reset" class="form-control btn btn-sm btn-outline-info" data-toggle="tooltip" title="{{ trans('default.label.filter-reset') }}">
-                    <i class="la la-refresh"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <hr>
-
         <div class="table-responsive">
           <table width="100%" class="table table-striped-table-bordered table-hover table-checkable" id="exilednoname">
             <thead>
               <tr>
                 <th class="no-export"> </th>
                 <th> No. </th>
-                @if ( !empty($status) && $status == 'true')
-                <th class="no-export"> Status </th>
-                @endif
                 @stack('content-head')
-                <th class="no-export"> Sort </th>
-                <th class="no-export"> Active </th>
+                <th> </th>
               </tr>
             </thead>
           </table>
@@ -181,14 +114,6 @@ var KTDatatablesExtensionsKeytable = function() {
       ajax: {
         url: "{{ URL::current() }}",
         "data" : function (d) {
-          d.filter_active = $('.filter_active').val();
-          @if ( !empty($daterange) && $daterange == 'true')
-          d.date_start = $('#date_start').val();
-          d.date_end = $('#date_end').val();
-          @endif
-          @if ( !empty($status) && $status == 'true')
-          d.filter_status = $('.filter-status').val();
-          @endif
           @stack('filter-function')
         }
       },
@@ -284,38 +209,16 @@ var KTDatatablesExtensionsKeytable = function() {
             return meta.row + meta.settings._iDisplayStart + 1;
           }
         },
-        @if ( !empty($status) && $status == 'true')
-        {
-          data: 'status', orderable: true, 'className': 'align-middle', 'width': '1',
-          render: function ( data, type, row ) {
-            if ( data == 1 ) { return '<a href="javascript:void(0);" id="status_pending" data-toggle="tooltip" data-original-title="Success" data-id="' + row.id + '"><span class="label label-outline-success label-pill label-inline"> {{ trans("default.label.success") }} </span></a>'; }
-            if ( data == 2 ) { return '<a href="javascript:void(0);" id="status_done" data-toggle="tooltip" data-original-title="Pending" data-id="' + row.id + '"><span class="label label-outline-warning label-pill label-inline"> {{ trans("default.label.pending") }} </span></a>'; }
-            if ( data == 3 ) { return '<a href="javascript:void(0);" data-toggle="tooltip" data-original-title="Delivered" data-id="' + row.id + '"><span class="label label-outline-primary label-pill label-inline"> {{ trans("default.label.delivered") }} </span></a>'; }
-            if ( data == 4 ) { return '<a href="javascript:void(0);" data-toggle="tooltip" data-original-title="Canceled" data-id="' + row.id + '"><span class="label label-outline-danger label-pill label-inline"> {{ trans("default.label.canceled") }} </span></a>'; }
-          }
-        },
-        @endif
         @stack('content-body')
-        { data: 'sort', 'className': 'align-middle text-center', 'width': '1', },
         {
-          data: 'active', orderable: true, 'className': 'align-middle text-center', 'width': '1',
-          render: function ( data, type, row ) {
-            if ( data == 1 ) { return '<a href="javascript:void(0);" id="disable" data-toggle="tooltip" data-original-title="Disable" data-id="' + row.id + '"><span class="label label-info label-inline"> {{ trans("default.label.yes") }} </span></a>'; }
-            if ( data == 2 ) { return '<a href="javascript:void(0);" id="enable" data-toggle="tooltip" data-original-title="Enable" data-id="' + row.id + '"><span class="label label-dark label-inline"> {{ trans("default.label.no") }} </span></a>'; }
-          }
+          data: 'action', orderable: false, orderable: false, searchable: false, 'width': '1',
+          render : function ( data, type, row) {
+            return '<a href="{{ URL::current() }}/' + row.url + '" class="navi-link"><span class="navi-icon"><i class="fas fa-wrench"></i></span></a>';
+          },
         },
       ],
       order: [[1, 'asc']]
     });
-
-    $('.filter-active').change(function () {
-      table.column(-2).search( $(this).val() ).draw();
-    });
-
-    @if ( !empty($daterange) && $daterange == 'true')
-    $('#date_start').change(function () { table.draw(); });
-    $('#date_end').change(function () { table.draw(); });
-    @endif
 
     @stack('filter-data')
 
@@ -328,10 +231,6 @@ var KTDatatablesExtensionsKeytable = function() {
     @endif
 
     $('#reset').click(function(){
-      $('.filter-active').val('');
-      $('.filter-status').val('');
-      $('#date_start').val('');
-      $('#date_end').val('');
       table.search( '' ).columns().search( '' ).draw();
     });
 
