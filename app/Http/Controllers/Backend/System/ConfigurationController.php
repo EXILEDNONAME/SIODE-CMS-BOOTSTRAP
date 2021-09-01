@@ -26,6 +26,7 @@ class ConfigurationController extends Controller {
     $this->path = 'pages.backend.system.configuration';
     $this->modelGeneral = 'App\Models\Backend\System\ConfigurationGeneral';
     $this->modelSectionFeature = 'App\Models\Backend\System\ConfigurationSectionFeature';
+    $this->modelSectionTeam = 'App\Models\Backend\System\ConfigurationSectionTeam';
   }
 
   /**
@@ -45,6 +46,25 @@ class ConfigurationController extends Controller {
     $update = $request->all();
     $data->update($update);
     return redirect($this->url . '/generals')->with('success', trans('default.notification.success.profile-updated'));
+  }
+
+  /**
+  **************************************************
+  * @return CONFIGURATION-SECTION-TEAMS
+  **************************************************
+  **/
+
+  public function team() {
+    $data = $this->modelSectionTeam::first();
+    $path = $this->path;
+    return view($this->path . '.section-team', compact('data', 'path'));
+  }
+
+  public function team_update(Request $request) {
+    $data = $this->modelSectionTeam::first();
+    $update = $request->all();
+    $data->update($update);
+    return redirect($this->url . '/section/teams')->with('success', trans('default.notification.success.profile-updated'));
   }
 
   /**

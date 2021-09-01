@@ -11,6 +11,7 @@ class DefaultSeeder extends Seeder {
 
     $this->call(ConfigurationGenerals::class);
     $this->call(ConfigurationSectionFeatures::class);
+    $this->call(ConfigurationSectionTeams::class);
 
   }
 }

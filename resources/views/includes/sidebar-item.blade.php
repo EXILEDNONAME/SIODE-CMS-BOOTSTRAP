@@ -1,3 +1,10 @@
+<li class="menu-item {{ (request()->is('dashboard/themes*')) ? 'menu-item-active' : '' }}">
+  <a href="/dashboard/themes" class="menu-link">
+    <i class="menu-icon fas fa-bars"></i>
+    <span class="menu-text"> Themes </span>
+  </a>
+</li>
+
 <li class="menu-section">
   <h4 class="menu-text"> Configuration </h4>
   <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
@@ -19,10 +26,10 @@
   <div class="menu-submenu">
     <i class="menu-arrow"></i>
     <ul class="menu-subnav">
-      <li class="menu-item {{ (request()->is('dashboard/configuration/section/home*')) ? 'menu-item-active' : '' }}">
-        <a href="/dashboard/management/roles" class="menu-link">
+      <li class="menu-item {{ (request()->is('dashboard/configuration/section/teams*')) ? 'menu-item-active' : '' }}">
+        <a href="/dashboard/configuration/section/teams" class="menu-link">
           <i class="menu-bullet menu-bullet-line"><span></span></i>
-          <span class="menu-text"> Home </span>
+          <span class="menu-text"> Teams </span>
         </a>
       </li>
       <li class="menu-item {{ (request()->is('dashboard/configuration/section/features*')) ? 'menu-item-active' : '' }}">

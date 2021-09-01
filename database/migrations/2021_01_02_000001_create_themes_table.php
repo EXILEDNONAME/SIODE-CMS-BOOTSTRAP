@@ -4,18 +4,12 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateConfigurationGeneralsTable extends Migration {
+class CreateThemesTable extends Migration {
   public function up() {
-    Schema::create('configuration_general', function (Blueprint $table) {
+    Schema::create('themes', function (Blueprint $table) {
       $table->increments('id');
       $table->string('name');
-      $table->string('slogan')->nullable();
-      $table->string('address')->nullable();
-      $table->string('email')->nullable();
-      $table->string('phone')->nullable();
-      $table->string('social_twitter')->nullable();
-      $table->string('social_facebook')->nullable();
-      $table->string('social_instagram')->nullable();
+      $table->text('description')->nullable();
       $table->integer('active')->default(1);
       $table->integer('sort')->default(1);
       $table->integer('status')->default(1);
@@ -26,6 +20,6 @@ class CreateConfigurationGeneralsTable extends Migration {
   }
 
   public function down() {
-    Schema::dropIfExists('configuration_general');
+    Schema::dropIfExists('themes');
   }
 }
