@@ -6,10 +6,11 @@ class DefaultSeeder extends Seeder {
   public function run() {
 
     // Default
-    $this->call(Themes::class);
+    $this->call(Configuration::class);
     $this->call(Roles::class);
     $this->call(Users::class);
 
+    $this->call(ConfigurationGenerals::class);
     $this->call(ConfigurationGenerals::class);
     $this->call(ConfigurationSectionFeatures::class);
     $this->call(ConfigurationSectionTeams::class);
