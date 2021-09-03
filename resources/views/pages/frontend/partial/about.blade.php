@@ -2,8 +2,8 @@
   <div class="container" data-aos="fade-up">
     <div class="section-title">
       <h2>About</h2>
-      <h3> {!! $section_about->title !!} </h3>
-      <p> {{ $section_about->sub_title }} </p>
+      <h3> {!! $about->title !!} </h3>
+      <p> {{ $about->sub_title }} </p>
     </div>
 
     <div class="row">
@@ -11,30 +11,28 @@
         <img src="/assets/frontend/img/about.jpg" class="img-fluid" alt="">
       </div>
       <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-        <h3> {{ $section_about->content_title }} </h3>
+        <h3> {{ $about->content_title }} </h3>
         <p class="font-italic">
-          {{ $section_about->content_description }}
+          {{ $about->content_description_1 }}
         </p>
         <ul>
           <li>
             <i class="bx bx-store-alt"></i>
             <div>
-              <h5>Ullamco laboris nisi ut aliquip consequat</h5>
-              <p>Magni facilis facilis repellendus cum excepturi quaerat praesentium libre trade</p>
+              <h5> {{ $about->content_1_title }} </h5>
+              <p> {{ $about->content_1_description }} </p>
             </div>
           </li>
           <li>
             <i class="bx bx-images"></i>
             <div>
-              <h5>Magnam soluta odio exercitationem reprehenderi</h5>
-              <p>Quo totam dolorum at pariatur aut distinctio dolorum laudantium illo direna pasata redi</p>
+              <h5> {{ $about->content_2_title }} </h5>
+              <p> {{ $about->content_2_description }} </p>
             </div>
           </li>
         </ul>
         <p>
-          Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum
+          {{ $about->content_description_2 }}
         </p>
       </div>
     </div>

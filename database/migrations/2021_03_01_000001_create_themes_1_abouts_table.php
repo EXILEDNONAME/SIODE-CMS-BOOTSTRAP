@@ -10,9 +10,13 @@ class CreateThemes1AboutsTable extends Migration {
       $table->increments('id');
       $table->string('title');
       $table->string('sub_title');
-      $table->string('image');
       $table->string('content_title');
-      $table->text('content_description');      
+      $table->text('content_description_1');
+      $table->string('content_1_title');
+      $table->string('content_1_description');
+      $table->string('content_2_title');
+      $table->string('content_2_description');
+      $table->text('content_description_2');
       $table->integer('active')->default(1);
       $table->integer('sort')->default(1);
       $table->integer('status')->default(1);
