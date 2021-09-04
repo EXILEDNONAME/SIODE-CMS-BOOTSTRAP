@@ -11,6 +11,22 @@ Route::group([
   Route::post('update', 'AboutController@update')->name('update');
 });
 
+// SECTION - CLIENTS
+Route::group([
+  'as' => 'system.main.t1.client.',
+  'prefix' => 'dashboard/sections/client',
+  'namespace' => 'Backend\Main\T1',
+], function(){
+  Route::get('status-done/{id}', 'ClientController@status_done')->name('status-done');
+  Route::get('status-pending/{id}', 'ClientController@status_pending')->name('status-pending');
+  Route::get('enable/{id}', 'ClientController@enable')->name('enable');
+  Route::get('disable/{id}', 'ClientController@disable')->name('disable');
+  Route::get('status/{id}/{slug}', 'ClientController@status')->name('status');
+  Route::get('delete/{id}', 'ClientController@delete')->name('delete');
+  Route::get('deleteall', 'ClientController@deleteall')->name('deleteall');
+  Route::resource('/', 'ClientController')->parameters(['' => 'id']);
+});
+
 // SECTION - COUNT
 Route::group([
   'as' => 'system.main.t1.count.',
@@ -36,4 +52,15 @@ Route::group([
   Route::get('delete/{id}', 'TeamController@delete')->name('delete');
   Route::get('deleteall', 'TeamController@deleteall')->name('deleteall');
   Route::resource('/', 'TeamController')->parameters(['' => 'id']);
+});
+
+// SECTION - SKILL
+Route::group([
+  'as' => 'system.main.t1.skill.',
+  'prefix' => 'dashboard/sections/skill',
+  'namespace' => 'Backend\Main\T1',
+], function(){
+  Route::get('/', 'SkillController@index')->name('index');
+  Route::post('store', 'SkillController@store')->name('store');
+  Route::post('update', 'SkillController@update')->name('update');
 });
