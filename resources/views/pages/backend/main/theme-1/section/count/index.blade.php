@@ -1,4 +1,4 @@
-@extends('layouts.backend.system.edit')
+@extends('layouts.backend.system.section-custom')
 @push('title', 'Section Count')
 
 @push('content-body')

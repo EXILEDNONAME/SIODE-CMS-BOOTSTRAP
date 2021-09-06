@@ -64,3 +64,19 @@ Route::group([
   Route::post('store', 'SkillController@store')->name('store');
   Route::post('update', 'SkillController@update')->name('update');
 });
+
+// SECTION - CLIENTS
+Route::group([
+  'as' => 'system.main.t1.testimonial.',
+  'prefix' => 'dashboard/sections/testimonial',
+  'namespace' => 'Backend\Main\T1',
+], function(){
+  Route::get('status-done/{id}', 'TestimonialController@status_done')->name('status-done');
+  Route::get('status-pending/{id}', 'TestimonialController@status_pending')->name('status-pending');
+  Route::get('enable/{id}', 'TestimonialController@enable')->name('enable');
+  Route::get('disable/{id}', 'TestimonialController@disable')->name('disable');
+  Route::get('status/{id}/{slug}', 'TestimonialController@status')->name('status');
+  Route::get('delete/{id}', 'TestimonialController@delete')->name('delete');
+  Route::get('deleteall', 'TestimonialController@deleteall')->name('deleteall');
+  Route::resource('/', 'TestimonialController')->parameters(['' => 'id']);
+});
