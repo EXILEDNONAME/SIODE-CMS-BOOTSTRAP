@@ -38,6 +38,22 @@ Route::group([
   Route::post('update', 'CountController@update')->name('update');
 });
 
+// SECTION - SERVICES
+Route::group([
+  'as' => 'system.main.t1.service.',
+  'prefix' => 'dashboard/sections/service',
+  'namespace' => 'Backend\Main\T1',
+], function(){
+  Route::get('status-done/{id}', 'ServiceController@status_done')->name('status-done');
+  Route::get('status-pending/{id}', 'ServiceController@status_pending')->name('status-pending');
+  Route::get('enable/{id}', 'ServiceController@enable')->name('enable');
+  Route::get('disable/{id}', 'ServiceController@disable')->name('disable');
+  Route::get('status/{id}/{slug}', 'ServiceController@status')->name('status');
+  Route::get('delete/{id}', 'ServiceController@delete')->name('delete');
+  Route::get('deleteall', 'ServiceController@deleteall')->name('deleteall');
+  Route::resource('/', 'ServiceController')->parameters(['' => 'id']);
+});
+
 // SECTION - TEAM
 Route::group([
   'as' => 'system.main.t1.team.',
