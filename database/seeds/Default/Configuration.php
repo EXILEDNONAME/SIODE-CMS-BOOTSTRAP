@@ -12,6 +12,10 @@ class Configuration extends Seeder {
 
     $theme = [
       [
+        'name'          => 'Other',
+        'created_at'    => Carbon::now(),
+      ],
+      [
         'name'          => 'Bizland',
         'created_at'    => Carbon::now(),
       ],
@@ -20,10 +24,12 @@ class Configuration extends Seeder {
     Theme::insert($theme);
 
     $section = [
-      [ 'id_theme' => '1', 'name' => 'About', 'url' => 'about', 'created_at' => Carbon::now(), ],
-      [ 'id_theme' => '1','name' => 'Count', 'url' => 'count', 'created_at' => Carbon::now(), ],
-      [ 'id_theme' => '1', 'name' => 'Team', 'url' => 'team', 'created_at' => Carbon::now(), ],
-      [ 'id_theme' => '1', 'name' => 'Client', 'url' => 'client', 'created_at' => Carbon::now(), ],
+      [ 'id_theme' => '2', 'name' => 'About', 'url' => 'about', 'created_at' => Carbon::now(), ],
+      [ 'id_theme' => '2','name' => 'Count', 'url' => 'count', 'created_at' => Carbon::now(), ],
+      [ 'id_theme' => '2', 'name' => 'Team', 'url' => 'team', 'created_at' => Carbon::now(), ],
+      [ 'id_theme' => '2', 'name' => 'Client', 'url' => 'client', 'created_at' => Carbon::now(), ],
+      [ 'id_theme' => '2', 'name' => 'Testimonial', 'url' => 'testimonial', 'created_at' => Carbon::now(), ],
+      [ 'id_theme' => '2', 'name' => 'Service', 'url' => 'service', 'created_at' => Carbon::now(), ],
     ];
 
     Section::insert($section);
