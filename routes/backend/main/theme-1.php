@@ -38,6 +38,22 @@ Route::group([
   Route::post('update', 'CountController@update')->name('update');
 });
 
+// SECTION - PRICINGS
+Route::group([
+  'as' => 'system.main.t1.pricing.',
+  'prefix' => 'dashboard/sections/pricing',
+  'namespace' => 'Backend\Main\T1',
+], function(){
+  Route::get('status-done/{id}', 'PricingController@status_done')->name('status-done');
+  Route::get('status-pending/{id}', 'PricingController@status_pending')->name('status-pending');
+  Route::get('enable/{id}', 'PricingController@enable')->name('enable');
+  Route::get('disable/{id}', 'PricingController@disable')->name('disable');
+  Route::get('status/{id}/{slug}', 'PricingController@status')->name('status');
+  Route::get('delete/{id}', 'PricingController@delete')->name('delete');
+  Route::get('deleteall', 'PricingController@deleteall')->name('deleteall');
+  Route::resource('/', 'PricingController')->parameters(['' => 'id']);
+});
+
 // SECTION - SERVICES
 Route::group([
   'as' => 'system.main.t1.service.',
@@ -52,6 +68,17 @@ Route::group([
   Route::get('delete/{id}', 'ServiceController@delete')->name('delete');
   Route::get('deleteall', 'ServiceController@deleteall')->name('deleteall');
   Route::resource('/', 'ServiceController')->parameters(['' => 'id']);
+});
+
+// SECTION - SKILL
+Route::group([
+  'as' => 'system.main.t1.skill.',
+  'prefix' => 'dashboard/sections/skill',
+  'namespace' => 'Backend\Main\T1',
+], function(){
+  Route::get('/', 'SkillController@index')->name('index');
+  Route::post('store', 'SkillController@store')->name('store');
+  Route::post('update', 'SkillController@update')->name('update');
 });
 
 // SECTION - TEAM
@@ -70,18 +97,7 @@ Route::group([
   Route::resource('/', 'TeamController')->parameters(['' => 'id']);
 });
 
-// SECTION - SKILL
-Route::group([
-  'as' => 'system.main.t1.skill.',
-  'prefix' => 'dashboard/sections/skill',
-  'namespace' => 'Backend\Main\T1',
-], function(){
-  Route::get('/', 'SkillController@index')->name('index');
-  Route::post('store', 'SkillController@store')->name('store');
-  Route::post('update', 'SkillController@update')->name('update');
-});
-
-// SECTION - CLIENTS
+// SECTION - TESTIMONIALS
 Route::group([
   'as' => 'system.main.t1.testimonial.',
   'prefix' => 'dashboard/sections/testimonial',

@@ -25,11 +25,12 @@ class Configuration extends Seeder {
 
     $section = [
       [ 'id_theme' => '2', 'name' => 'About', 'url' => 'about', 'created_at' => Carbon::now(), ],
-      [ 'id_theme' => '2','name' => 'Count', 'url' => 'count', 'created_at' => Carbon::now(), ],
-      [ 'id_theme' => '2', 'name' => 'Team', 'url' => 'team', 'created_at' => Carbon::now(), ],
       [ 'id_theme' => '2', 'name' => 'Client', 'url' => 'client', 'created_at' => Carbon::now(), ],
-      [ 'id_theme' => '2', 'name' => 'Testimonial', 'url' => 'testimonial', 'created_at' => Carbon::now(), ],
+      [ 'id_theme' => '2', 'name' => 'Count', 'url' => 'count', 'created_at' => Carbon::now(), ],
+      [ 'id_theme' => '2', 'name' => 'Pricing', 'url' => 'pricing', 'created_at' => Carbon::now(), ],
       [ 'id_theme' => '2', 'name' => 'Service', 'url' => 'service', 'created_at' => Carbon::now(), ],
+      [ 'id_theme' => '2', 'name' => 'Team', 'url' => 'team', 'created_at' => Carbon::now(), ],
+      [ 'id_theme' => '2', 'name' => 'Testimonial', 'url' => 'testimonial', 'created_at' => Carbon::now(), ],
     ];
 
     Section::insert($section);
@@ -40,7 +41,7 @@ class Configuration extends Seeder {
         'context_2'          => '200',
         'context_3'          => '300',
         'context_4'          => '400',
-        'created_at'    => Carbon::now(),
+        'created_at'         => Carbon::now(),
       ],
     ];
 

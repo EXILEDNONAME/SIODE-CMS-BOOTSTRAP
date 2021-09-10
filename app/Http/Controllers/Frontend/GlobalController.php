@@ -25,11 +25,12 @@ class GlobalController extends Controller {
     $this->path = 'pages.frontend';
     $this->modelGeneral = 'App\Models\Backend\System\ConfigurationGeneral';
     $this->modelSectionAbout = 'App\Models\Backend\Main\T1\About';
-    $this->modelSectionCount = 'App\Models\Backend\Main\T1\Count';
-    $this->modelSectionTeam = 'App\Models\Backend\Main\T1\Team';
     $this->modelSectionClient = 'App\Models\Backend\Main\T1\Client';
-    $this->modelSectionTestimonial = 'App\Models\Backend\Main\T1\Testimonial';
+    $this->modelSectionCount = 'App\Models\Backend\Main\T1\Count';
+    $this->modelSectionPricing = 'App\Models\Backend\Main\T1\Pricing';
     $this->modelSectionService = 'App\Models\Backend\Main\T1\Service';
+    $this->modelSectionTeam = 'App\Models\Backend\Main\T1\Team';
+    $this->modelSectionTestimonial = 'App\Models\Backend\Main\T1\Testimonial';
   }
 
   /**
@@ -41,12 +42,13 @@ class GlobalController extends Controller {
   public function index() {
     $general = $this->modelGeneral::first();
     $about = $this->modelSectionAbout::first();
-    $count = $this->modelSectionCount::first();
-    $team = $this->modelSectionTeam::get();
     $client = $this->modelSectionClient::get();
-    $testimonial = $this->modelSectionTestimonial::get();
+    $count = $this->modelSectionCount::first();
+    $pricing = $this->modelSectionPricing::get();
     $service = $this->modelSectionService::get();
-    return view($this->path . '.index', compact('general', 'about', 'count', 'team', 'client', 'testimonial', 'service'))->render();
+    $team = $this->modelSectionTeam::get();
+    $testimonial = $this->modelSectionTestimonial::get();
+    return view($this->path . '.index', compact('general', 'about', 'client', 'count', 'pricing', 'service', 'team', 'testimonial'))->render();
   }
 
 }
