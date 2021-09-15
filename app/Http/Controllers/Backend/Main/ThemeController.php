@@ -22,7 +22,7 @@ class ThemeController extends Controller {
   **/
 
   public function __construct() {
-    $this->middleware('auth');
+    $this->middleware(['auth', 'administrator']);
     $this->url = '/dashboard/themes';
     $this->path = 'pages.backend.main.theme';
     $this->model = 'App\Models\Backend\Main\Theme';
