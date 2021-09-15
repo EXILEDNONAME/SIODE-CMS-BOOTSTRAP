@@ -77,6 +77,7 @@
                 <th> No. </th>
                 @stack('content-head')
                 <th> </th>
+                <th> </th>
               </tr>
             </thead>
           </table>
@@ -210,6 +211,14 @@ var KTDatatablesExtensionsKeytable = function() {
           }
         },
         @stack('content-body')
+        {
+          data: 'active', orderable: true, 'className': 'align-middle text-center', 'width': '1',
+          render: function ( data, type, row ) {
+            if ( data == 1 ) { return '<a href="javascript:void(0);" id="disable" data-toggle="tooltip" data-original-title="Disable" data-id="' + row.id + '"><span class="label label-info label-inline"> {{ trans("default.label.yes") }} </span></a>'; }
+            else if ( data == 2 ) { return '<a href="javascript:void(0);" id="enable" data-toggle="tooltip" data-original-title="Enable" data-id="' + row.id + '"><span class="label label-dark label-inline"> {{ trans("default.label.no") }} </span></a>'; }
+            else { return '<a href="javascript:void(0);" id="enable" data-toggle="tooltip" data-original-title="Enable" data-id="' + row.id + '"><span class="label label-dark label-inline"> {{ trans("default.label.no") }} </span></a>'; }
+          }
+        },
         {
           data: 'action', orderable: false, orderable: false, searchable: false, 'width': '1',
           render : function ( data, type, row) {

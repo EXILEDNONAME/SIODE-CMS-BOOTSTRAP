@@ -6,6 +6,8 @@ Route::group([
   'prefix' => 'dashboard/themes',
   'namespace' => 'Backend\Main',
 ], function(){
+  Route::get('enable/{id}', 'ThemeController@enable')->name('enable');
+  Route::get('disable/{id}', 'ThemeController@disable')->name('disable');
   Route::get('/', 'ThemeController@index')->name('index');
 });
 
