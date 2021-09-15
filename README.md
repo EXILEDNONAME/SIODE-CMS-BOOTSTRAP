@@ -1,8 +1,10 @@
 # SIODE-CMS-BOOTSTRAP
 
-THEMES 1 ( UNDEFINED )
+THEME 1 (OTHER)
+- Main Theme
+<hr>
 
-THEMES 2 ( BIZZLAND )
+THEME 2 (BIZZLAND)
 - About
 - Client
 - Count
@@ -10,3 +12,10 @@ THEMES 2 ( BIZZLAND )
 - Service
 - Team
 - Testimonial
+<hr>
+
+THEME 3 (ARSHA)
+<hr>
+
+THEME 4 (RESI)
+<hr>
