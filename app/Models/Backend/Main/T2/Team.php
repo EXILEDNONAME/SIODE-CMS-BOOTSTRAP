@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Models\Backend\Main\T1;
+namespace App\Models\Backend\Main\T2;
 
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 
-class Testimonial extends Model {
+class Team extends Model {
 
   use LogsActivity;
 
-  protected $table = 'themes_1_testimonials';
+  protected $table = 'themes_2_teams';
   protected $primaryKey = 'id';
   protected $guarded = ['id'];
 

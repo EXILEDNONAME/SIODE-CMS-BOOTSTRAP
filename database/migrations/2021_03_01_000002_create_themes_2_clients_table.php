@@ -4,9 +4,9 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateThemes1ClientsTable extends Migration {
+class CreateThemes2ClientsTable extends Migration {
   public function up() {
-    Schema::create('themes_1_clients', function (Blueprint $table) {
+    Schema::create('themes_2_clients', function (Blueprint $table) {
       $table->increments('id');
       $table->string('name');
       $table->string('image');
@@ -21,6 +21,6 @@ class CreateThemes1ClientsTable extends Migration {
   }
 
   public function down() {
-    Schema::dropIfExists('themes_1_clients');
+    Schema::dropIfExists('themes_2_clients');
   }
 }

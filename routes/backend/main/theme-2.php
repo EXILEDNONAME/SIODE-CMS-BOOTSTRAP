@@ -2,9 +2,9 @@
 
 // SECTION - ABOUT
 Route::group([
-  'as' => 'system.main.t1.about.',
+  'as' => 'system.main.t2.about.',
   'prefix' => 'dashboard/sections/about',
-  'namespace' => 'Backend\Main\T1',
+  'namespace' => 'Backend\Main\T2',
 ], function(){
   Route::get('/', 'AboutController@index')->name('index');
   Route::post('store', 'AboutController@store')->name('store');

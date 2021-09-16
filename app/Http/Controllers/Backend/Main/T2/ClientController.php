@@ -25,8 +25,8 @@ class ClientController extends Controller {
 
     $this->middleware('auth');
     $this->url = '/dashboard/sections/client';
-    $this->path = 'pages.backend.main.theme-1.section.client';
-    $this->model = 'App\Models\Backend\Main\T1\Client';
+    $this->path = 'pages.backend.main.theme-2.section.client';
+    $this->model = 'App\Models\Backend\Main\T2\Client';
     $this->data = $this->model::get();
 
   }

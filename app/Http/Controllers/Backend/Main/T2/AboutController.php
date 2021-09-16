@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Main\T1;
+namespace App\Http\Controllers\Backend\Main\T2;
 
 use Auth;
 use DataTables;
@@ -22,11 +22,14 @@ class AboutController extends Controller {
   **/
 
   public function __construct() {
-    $this->middleware(['auth', 't2']);
     $this->url = '/dashboard/sections/about';
-    $this->path = 'pages.backend.main.theme-1.section';
-    $this->model = 'App\Models\Backend\Main\T1\About';
-    $this->data = $this->model::get();
+    $this->middleware('auth');
+
+    if ( $this->middleware(['auth', 't2'])) {
+      $this->path = 'pages.backend.main.theme-2.section';
+      $this->model = 'App\Models\Backend\Main\T2\About';
+      $this->data = $this->model::get();
+    }
   }
 
   /**
@@ -36,22 +39,22 @@ class AboutController extends Controller {
   **/
 
   public function index() {
-      $data = $this->model::first();
-      $path = $this->path . '.about';
-      return view($this->path . '.about.index', compact('data', 'path'));
+    $data = $this->model::first();
+    $path = $this->path . '.about';
+    return view($this->path . '.about.index', compact('data', 'path'));
   }
 
   public function store(Request $request) {
-      $store = $request->all();
-      $this->model::create($store);
-      return redirect($this->url)->with('success', trans('default.notification.success.item-created'));
+    $store = $request->all();
+    $this->model::create($store);
+    return redirect($this->url)->with('success', trans('default.notification.success.item-created'));
   }
 
   public function update(Request $request) {
-      $data = $this->model::first();
-      $update = $request->all();
-      $data->update($update);
-      return redirect($this->url)->with('success', trans('default.notification.success.item-updated'));
+    $data = $this->model::first();
+    $update = $request->all();
+    $data->update($update);
+    return redirect($this->url)->with('success', trans('default.notification.success.item-updated'));
   }
 
 }

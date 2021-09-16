@@ -4,16 +4,14 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateThemes1TeamsTable extends Migration {
+class CreateThemes2ServicesTable extends Migration {
   public function up() {
-    Schema::create('themes_1_teams', function (Blueprint $table) {
+    Schema::create('themes_2_services', function (Blueprint $table) {
       $table->increments('id');
+      $table->text('icon')->nullable();
       $table->string('name');
-      $table->string('photo')->nullable();
-      $table->string('position')->nullable();
-      $table->string('social_facebook')->nullable();
-      $table->string('social_twitter')->nullable();
-      $table->string('social_instagram')->nullable();
+      $table->string('sub_title');
+      $table->text('description')->nullable();
       $table->integer('active')->default(1);
       $table->integer('sort')->default(1);
       $table->integer('status')->default(1);
@@ -24,6 +22,6 @@ class CreateThemes1TeamsTable extends Migration {
   }
 
   public function down() {
-    Schema::dropIfExists('themes_1_teams');
+    Schema::dropIfExists('themes_2_services');
   }
 }

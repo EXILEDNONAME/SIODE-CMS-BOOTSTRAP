@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Models\Backend\Main\T1;
+namespace App\Models\Backend\Main\T2;
 
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 
-class Pricing extends Model {
+class About extends Model {
 
   use LogsActivity;
 
-  protected $table = 'themes_1_pricings';
+  protected $table = 'themes_2_abouts';
   protected $primaryKey = 'id';
   protected $guarded = ['id'];
 

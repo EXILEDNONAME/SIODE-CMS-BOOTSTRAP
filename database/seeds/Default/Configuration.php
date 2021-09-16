@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Carbon\Carbon as Carbon;
 use App\Models\Backend\Main\Theme;
 use App\Models\Backend\Main\Section;
-use App\Models\Backend\Main\T1\Count;
+use App\Models\Backend\Main\T2\Count;
 
 class Configuration extends Seeder {
 

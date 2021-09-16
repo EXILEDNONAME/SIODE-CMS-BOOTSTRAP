@@ -4,14 +4,16 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateThemes1TestimonialsTable extends Migration {
+class CreateThemes2SkillsTable extends Migration {
   public function up() {
-    Schema::create('themes_1_testimonials', function (Blueprint $table) {
+    Schema::create('themes_2_skills', function (Blueprint $table) {
       $table->increments('id');
       $table->string('name');
-      $table->string('position');
-      $table->string('photo');
-      $table->text('description')->nullable();
+      $table->string('photo')->nullable();
+      $table->string('position')->nullable();
+      $table->string('social_facebook')->nullable();
+      $table->string('social_twitter')->nullable();
+      $table->string('social_instagram')->nullable();
       $table->integer('active')->default(1);
       $table->integer('sort')->default(1);
       $table->integer('status')->default(1);
@@ -22,6 +24,6 @@ class CreateThemes1TestimonialsTable extends Migration {
   }
 
   public function down() {
-    Schema::dropIfExists('themes_1_testimonials');
+    Schema::dropIfExists('themes_2_skills');
   }
 }

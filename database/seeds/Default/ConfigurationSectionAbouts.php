@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Carbon\Carbon as Carbon;
-use App\Models\Backend\Main\T1\About;
+use App\Models\Backend\Main\T2\About;
 
 class ConfigurationSectionAbouts extends Seeder {
   public function run() {

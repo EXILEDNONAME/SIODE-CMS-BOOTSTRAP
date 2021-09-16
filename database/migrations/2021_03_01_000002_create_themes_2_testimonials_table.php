@@ -4,14 +4,13 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateThemes1PricingsTable extends Migration {
+class CreateThemes2TestimonialsTable extends Migration {
   public function up() {
-    Schema::create('themes_1_pricings', function (Blueprint $table) {
+    Schema::create('themes_2_testimonials', function (Blueprint $table) {
       $table->increments('id');
-      $table->integer('default')->default(2);
-      $table->integer('premium')->default(2);
       $table->string('name');
-      $table->string('price');
+      $table->string('position');
+      $table->string('photo');
       $table->text('description')->nullable();
       $table->integer('active')->default(1);
       $table->integer('sort')->default(1);
@@ -23,6 +22,6 @@ class CreateThemes1PricingsTable extends Migration {
   }
 
   public function down() {
-    Schema::dropIfExists('themes_1_pricings');
+    Schema::dropIfExists('themes_2_testimonials');
   }
 }

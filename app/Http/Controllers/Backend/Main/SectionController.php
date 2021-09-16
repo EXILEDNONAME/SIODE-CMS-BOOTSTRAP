@@ -34,6 +34,7 @@ class SectionController extends Controller {
   public function index() {
     if ( Auth::User()->id_theme == 1 ) { $data = $this->model::get()->where('id_theme', 1); }
     if ( Auth::User()->id_theme == 2 ) { $data = $this->model::get()->where('id_theme', 2); }
+    if ( Auth::User()->id_theme == 3 ) { $data = $this->model::get()->where('id_theme', 3); }
     $model = $this->model;
     if(request()->ajax()) {
       return DataTables::of($data)
