@@ -1,5 +1,16 @@
 <?php
 
+// SECTION - GENERAL
+Route::group([
+  'as' => 'system.main.t2.general.',
+  'prefix' => 'dashboard/sections/general',
+  'namespace' => 'Backend\Main\T2',
+], function(){
+  Route::get('/', 'GeneralController@index')->name('index');
+  Route::post('store', 'GeneralController@store')->name('store');
+  Route::post('update', 'GeneralController@update')->name('update');
+});
+
 // SECTION - ABOUT
 Route::group([
   'as' => 'system.main.t2.about.',
