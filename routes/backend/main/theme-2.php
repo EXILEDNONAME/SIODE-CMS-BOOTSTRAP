@@ -13,9 +13,9 @@ Route::group([
 
 // SECTION - CLIENTS
 Route::group([
-  'as' => 'system.main.t1.client.',
+  'as' => 'system.main.t2.client.',
   'prefix' => 'dashboard/sections/client',
-  'namespace' => 'Backend\Main\T1',
+  'namespace' => 'Backend\Main\T2',
 ], function(){
   Route::get('status-done/{id}', 'ClientController@status_done')->name('status-done');
   Route::get('status-pending/{id}', 'ClientController@status_pending')->name('status-pending');
@@ -29,9 +29,9 @@ Route::group([
 
 // SECTION - COUNT
 Route::group([
-  'as' => 'system.main.t1.count.',
+  'as' => 'system.main.t2.count.',
   'prefix' => 'dashboard/sections/count',
-  'namespace' => 'Backend\Main\T1',
+  'namespace' => 'Backend\Main\T2',
 ], function(){
   Route::get('/', 'CountController@index')->name('index');
   Route::post('store', 'CountController@store')->name('store');
@@ -40,9 +40,9 @@ Route::group([
 
 // SECTION - PRICINGS
 Route::group([
-  'as' => 'system.main.t1.pricing.',
+  'as' => 'system.main.t2.pricing.',
   'prefix' => 'dashboard/sections/pricing',
-  'namespace' => 'Backend\Main\T1',
+  'namespace' => 'Backend\Main\T2',
 ], function(){
   Route::get('status-done/{id}', 'PricingController@status_done')->name('status-done');
   Route::get('status-pending/{id}', 'PricingController@status_pending')->name('status-pending');
@@ -56,9 +56,9 @@ Route::group([
 
 // SECTION - SERVICES
 Route::group([
-  'as' => 'system.main.t1.service.',
+  'as' => 'system.main.t2.service.',
   'prefix' => 'dashboard/sections/service',
-  'namespace' => 'Backend\Main\T1',
+  'namespace' => 'Backend\Main\T2',
 ], function(){
   Route::get('status-done/{id}', 'ServiceController@status_done')->name('status-done');
   Route::get('status-pending/{id}', 'ServiceController@status_pending')->name('status-pending');
@@ -72,9 +72,9 @@ Route::group([
 
 // SECTION - SKILL
 Route::group([
-  'as' => 'system.main.t1.skill.',
+  'as' => 'system.main.t2.skill.',
   'prefix' => 'dashboard/sections/skill',
-  'namespace' => 'Backend\Main\T1',
+  'namespace' => 'Backend\Main\T2',
 ], function(){
   Route::get('/', 'SkillController@index')->name('index');
   Route::post('store', 'SkillController@store')->name('store');
@@ -83,9 +83,9 @@ Route::group([
 
 // SECTION - TEAM
 Route::group([
-  'as' => 'system.main.t1.team.',
+  'as' => 'system.main.t2.team.',
   'prefix' => 'dashboard/sections/team',
-  'namespace' => 'Backend\Main\T1',
+  'namespace' => 'Backend\Main\T2',
 ], function(){
   Route::get('status-done/{id}', 'TeamController@status_done')->name('status-done');
   Route::get('status-pending/{id}', 'TeamController@status_pending')->name('status-pending');
@@ -99,9 +99,9 @@ Route::group([
 
 // SECTION - TESTIMONIALS
 Route::group([
-  'as' => 'system.main.t1.testimonial.',
+  'as' => 'system.main.t2.testimonial.',
   'prefix' => 'dashboard/sections/testimonial',
-  'namespace' => 'Backend\Main\T1',
+  'namespace' => 'Backend\Main\T2',
 ], function(){
   Route::get('status-done/{id}', 'TestimonialController@status_done')->name('status-done');
   Route::get('status-pending/{id}', 'TestimonialController@status_pending')->name('status-pending');

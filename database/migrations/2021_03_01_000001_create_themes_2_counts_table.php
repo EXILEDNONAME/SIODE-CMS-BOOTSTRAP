@@ -8,6 +8,10 @@ class CreateThemes2CountsTable extends Migration {
   public function up() {
     Schema::create('themes_2_counts', function (Blueprint $table) {
       $table->increments('id');
+      $table->string('context_1_title');
+      $table->string('context_2_title');
+      $table->string('context_3_title');
+      $table->string('context_4_title');
       $table->integer('context_1');
       $table->integer('context_2');
       $table->integer('context_3');

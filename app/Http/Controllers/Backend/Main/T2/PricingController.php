@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Main\T1;
+namespace App\Http\Controllers\Backend\Main\T2;
 
 use Auth;
 use DataTables;
@@ -25,8 +25,8 @@ class PricingController extends Controller {
 
     $this->middleware('auth');
     $this->url = '/dashboard/sections/pricing';
-    $this->path = 'pages.backend.main.theme-1.section.pricing';
-    $this->model = 'App\Models\Backend\Main\T1\Pricing';
+    $this->path = 'pages.backend.main.theme-2.section.pricing';
+    $this->model = 'App\Models\Backend\Main\T2\Pricing';
     $this->data = $this->model::get();
 
   }

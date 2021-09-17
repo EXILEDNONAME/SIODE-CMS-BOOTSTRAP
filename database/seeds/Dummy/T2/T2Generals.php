@@ -3,9 +3,11 @@
 use Illuminate\Database\Seeder;
 use Carbon\Carbon as Carbon;
 use App\Models\Backend\System\ConfigurationGeneral;
+use App\Models\Backend\Main\Theme;
 
-class ConfigurationGenerals extends Seeder {
+class T2Generals extends Seeder {
   public function run() {
+
     $data = [
       [
         'name'              => 'EXILEDNONAME',
@@ -21,5 +23,6 @@ class ConfigurationGenerals extends Seeder {
     ];
 
     ConfigurationGeneral::insert($data);
+
   }
 }

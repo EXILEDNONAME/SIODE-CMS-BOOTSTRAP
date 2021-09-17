@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Main\T1;
+namespace App\Http\Controllers\Backend\Main\T2;
 
 use Auth;
 use DataTables;
@@ -21,8 +21,8 @@ class SkillController extends Controller {
   public function __construct() {
     $this->middleware('auth');
     $this->url = '/dashboard/sections/skill';
-    $this->path = 'pages.backend.main.theme-1.section';
-    $this->model = 'App\Models\Backend\Main\T1\Skill';
+    $this->path = 'pages.backend.main.theme-2.section';
+    $this->model = 'App\Models\Backend\Main\T2\Skill';
     $this->data = $this->model::get();
   }
 

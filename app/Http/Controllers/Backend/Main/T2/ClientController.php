@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Main\T1;
+namespace App\Http\Controllers\Backend\Main\T2;
 
 use Auth;
 use DataTables;

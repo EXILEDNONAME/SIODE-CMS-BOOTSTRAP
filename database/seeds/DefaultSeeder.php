@@ -5,15 +5,19 @@ use Illuminate\Database\Seeder;
 class DefaultSeeder extends Seeder {
   public function run() {
 
+    // MAIN
+    $this->call(T1::class);
+    $this->call(T2::class);
+
     // Default
-    $this->call(Configuration::class);
     $this->call(Roles::class);
     $this->call(Users::class);
 
-    $this->call(ConfigurationGenerals::class);
-    $this->call(ConfigurationSectionAbouts::class);
-    $this->call(ConfigurationSectionFeatures::class);
-    $this->call(ConfigurationSectionTeams::class);
+    // T2 - DUMMY
+    $this->call(T2Generals::class);
+    $this->call(T2Abouts::class);
+    $this->call(T2Features::class);
+    $this->call(T2Teams::class);
 
   }
 }

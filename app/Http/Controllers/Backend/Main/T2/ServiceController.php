@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Main\T1;
+namespace App\Http\Controllers\Backend\Main\T2;
 
 use Auth;
 use DataTables;
@@ -25,8 +25,8 @@ class ServiceController extends Controller {
 
     $this->middleware('auth');
     $this->url = '/dashboard/sections/service';
-    $this->path = 'pages.backend.main.theme-1.section.service';
-    $this->model = 'App\Models\Backend\Main\T1\Service';
+    $this->path = 'pages.backend.main.theme-2.section.service';
+    $this->model = 'App\Models\Backend\Main\T2\Service';
     $this->data = $this->model::get();
 
   }
@@ -40,7 +40,7 @@ class ServiceController extends Controller {
   public function index() {
     $model = $this->model;
     if(request()->ajax()) {
-      return DataTables::of($this->data)      
+      return DataTables::of($this->data)
       ->rawColumns(['description'])
       ->addIndexColumn()
       ->make(true);

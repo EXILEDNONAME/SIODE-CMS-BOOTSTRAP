@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Main\T1;
+namespace App\Http\Controllers\Backend\Main\T2;
 
 use Auth;
 use DataTables;
@@ -25,8 +25,8 @@ class TeamController extends Controller {
 
     $this->middleware('auth');
     $this->url = '/dashboard/sections/team';
-    $this->path = 'pages.backend.main.theme-1.section.team';
-    $this->model = 'App\Models\Backend\Main\T1\Team';
+    $this->path = 'pages.backend.main.theme-2.section.team';
+    $this->model = 'App\Models\Backend\Main\T2\Team';
     $this->data = $this->model::get();
 
   }

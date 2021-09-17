@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Carbon\Carbon as Carbon;
 use App\Models\Backend\System\ConfigurationSectionTeam;
 
-class ConfigurationSectionTeams extends Seeder {
+class T2Teams extends Seeder {
   public function run() {
     $data = [
       [

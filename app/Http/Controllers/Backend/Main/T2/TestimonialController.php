@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Main\T1;
+namespace App\Http\Controllers\Backend\Main\T2;
 
 use Auth;
 use DataTables;
@@ -25,8 +25,8 @@ class TestimonialController extends Controller {
 
     $this->middleware('auth');
     $this->url = '/dashboard/sections/testimonial';
-    $this->path = 'pages.backend.main.theme-1.section.testimonial';
-    $this->model = 'App\Models\Backend\Main\T1\Testimonial';
+    $this->path = 'pages.backend.main.theme-2.section.testimonial';
+    $this->model = 'App\Models\Backend\Main\T2\Testimonial';
     $this->data = $this->model::get();
 
   }

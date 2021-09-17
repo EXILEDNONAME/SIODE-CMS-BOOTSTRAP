@@ -25,13 +25,13 @@ class GlobalController extends Controller {
     $this->path = 'pages.frontend';
     $this->theme = 'App\Models\Backend\Main\Theme';
     $this->modelGeneral = 'App\Models\Backend\System\ConfigurationGeneral';
-    $this->modelSectionAbout = 'App\Models\Backend\Main\T1\About';
-    $this->modelSectionClient = 'App\Models\Backend\Main\T1\Client';
-    $this->modelSectionCount = 'App\Models\Backend\Main\T1\Count';
-    $this->modelSectionPricing = 'App\Models\Backend\Main\T1\Pricing';
-    $this->modelSectionService = 'App\Models\Backend\Main\T1\Service';
-    $this->modelSectionTeam = 'App\Models\Backend\Main\T1\Team';
-    $this->modelSectionTestimonial = 'App\Models\Backend\Main\T1\Testimonial';
+    $this->modelSectionAbout = 'App\Models\Backend\Main\T2\About';
+    $this->modelSectionClient = 'App\Models\Backend\Main\T2\Client';
+    $this->modelSectionCount = 'App\Models\Backend\Main\T2\Count';
+    $this->modelSectionPricing = 'App\Models\Backend\Main\T2\Pricing';
+    $this->modelSectionService = 'App\Models\Backend\Main\T2\Service';
+    $this->modelSectionTeam = 'App\Models\Backend\Main\T2\Team';
+    $this->modelSectionTestimonial = 'App\Models\Backend\Main\T2\Testimonial';
   }
 
   /**
