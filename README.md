@@ -25,3 +25,7 @@ THEME 3 (ARSHA)
 
 THEME 4 (RESI)
 <hr>
+
+To do
+- General Configuration
+- Disable / Enable Theme
