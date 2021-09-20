@@ -6,32 +6,64 @@
       <div class="col-lg-3 col-md-6">
         <div class="count-box">
           <i class="icofont-simple-smile"></i>
-          <span data-toggle="counter-up"> {{ $count->context_1 }} </span>
-          <p>Happy Clients</p>
+          <span data-toggle="counter-up">
+            @if (!empty($count->context_1)) {{ $count->context_1 }}
+            @else -
+            @endif
+          </span>
+          <p>
+            @if (!empty($count->context_1_title)) {{ $count->context_1_title }}
+            @else -
+            @endif
+          </p>
         </div>
       </div>
 
       <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
         <div class="count-box">
           <i class="icofont-document-folder"></i>
-          <span data-toggle="counter-up"> {{ $count->context_2 }} </span>
-          <p>Projects</p>
+          <span data-toggle="counter-up">
+            @if (!empty($count->context_2)) {{ $count->context_2 }}
+            @else -
+            @endif
+          </span>
+          <p>
+            @if (!empty($count->context_2_title)) {{ $count->context_2_title }}
+            @else -
+            @endif
+          </p>
         </div>
       </div>
 
       <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
         <div class="count-box">
           <i class="icofont-live-support"></i>
-          <span data-toggle="counter-up"> {{ $count->context_3 }} </span>
-          <p>Hours Of Support</p>
+          <span data-toggle="counter-up">
+            @if (!empty($count->context_3)) {{ $count->context_3 }}
+            @else -
+            @endif
+          </span>
+          <p>
+            @if (!empty($count->context_3_title)) {{ $count->context_3_title }}
+            @else -
+            @endif
+          </p>
         </div>
       </div>
 
       <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
         <div class="count-box">
           <i class="icofont-users-alt-5"></i>
-          <span data-toggle="counter-up"> {{ $count->context_4 }} </span>
-          <p>Hard Workers</p>
+          <span data-toggle="counter-up">
+            @if (!empty($count->context_4)) {{ $count->context_4 }}
+            @else -
+            @endif
+          </span>
+          <p>
+            @if (!empty($count->context_4_title)) {{ $count->context_4_title }}
+            @else -
+            @endif
+          </p>
         </div>
       </div>
 

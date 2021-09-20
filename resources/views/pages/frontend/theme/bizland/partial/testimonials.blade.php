@@ -1,6 +1,11 @@
 <section id="testimonials" class="testimonials">
   <div class="container" data-aos="zoom-in">
     <div class="owl-carousel testimonials-carousel">
+
+      <div class="testimonial-item text-muted">
+        No Testimonials ...
+      </div>
+
       @foreach($testimonial as $testimonial)
       <div class="testimonial-item">
         <img src="{!! $testimonial->description !!}" class="testimonial-img" alt="">

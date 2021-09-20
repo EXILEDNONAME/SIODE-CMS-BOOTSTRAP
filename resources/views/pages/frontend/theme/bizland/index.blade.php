@@ -65,8 +65,8 @@
   </section>
 
   <main id="main">
-    @include('pages.frontend.theme.bizland.partial.about')
     @include('pages.frontend.theme.bizland.partial.counts')
+    @include('pages.frontend.theme.bizland.partial.about')
     @include('pages.frontend.theme.bizland.partial.team')
     @include('pages.frontend.theme.bizland.partial.testimonials')
     @include('pages.frontend.theme.bizland.partial.clients')
