@@ -59,6 +59,10 @@ Route::group([
   Route::get('status-pending/{id}', 'PricingController@status_pending')->name('status-pending');
   Route::get('enable/{id}', 'PricingController@enable')->name('enable');
   Route::get('disable/{id}', 'PricingController@disable')->name('disable');
+  Route::get('default_on/{id}', 'PricingController@default_on')->name('default-on');
+  Route::get('default_off/{id}', 'PricingController@default_off')->name('default-off');
+  Route::get('premium_on/{id}', 'PricingController@premium_on')->name('premium-on');
+  Route::get('premium_off/{id}', 'PricingController@premium_off')->name('premium-off');
   Route::get('status/{id}/{slug}', 'PricingController@status')->name('status');
   Route::get('delete/{id}', 'PricingController@delete')->name('delete');
   Route::get('deleteall', 'PricingController@deleteall')->name('deleteall');

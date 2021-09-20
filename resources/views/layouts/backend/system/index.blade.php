@@ -494,6 +494,86 @@ var KTDatatablesExtensionsKeytable = function() {
       });
     });
 
+    $('body').on('click', '#default_on', function () {
+      var id = $(this).data("id");
+      $.ajax({
+        type: "get",
+        url: "{{ URL::current() }}/default_on/"+id,
+        processing: true,
+        serverSide: true,
+        success: function (data) {
+          var oTable = $('#exilednoname').dataTable();
+          oTable.fnDraw(false);
+          toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true, };
+          toastr.success("{{ trans('default.notification.success.default-enable') }}");
+        },
+        error: function (data) {
+          toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true, };
+          toastr.error("{{ trans('default.notification.error.restrict') }}!");
+        }
+      });
+    });
+
+    $('body').on('click', '#default_off', function () {
+      var id = $(this).data("id");
+      $.ajax({
+        type: "get",
+        url: "{{ URL::current() }}/default_off/"+id,
+        processing: true,
+        serverSide: true,
+        success: function (data) {
+          var oTable = $('#exilednoname').dataTable();
+          oTable.fnDraw(false);
+          toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true, };
+          toastr.success("{{ trans('default.notification.success.default-disable') }}");
+        },
+        error: function (data) {
+          toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true, };
+          toastr.error("{{ trans('default.notification.error.restrict') }}!");
+        }
+      });
+    });
+
+    $('body').on('click', '#premium_on', function () {
+      var id = $(this).data("id");
+      $.ajax({
+        type: "get",
+        url: "{{ URL::current() }}/premium_on/"+id,
+        processing: true,
+        serverSide: true,
+        success: function (data) {
+          var oTable = $('#exilednoname').dataTable();
+          oTable.fnDraw(false);
+          toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true, };
+          toastr.success("{{ trans('default.notification.success.default-enable') }}");
+        },
+        error: function (data) {
+          toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true, };
+          toastr.error("{{ trans('default.notification.error.restrict') }}!");
+        }
+      });
+    });
+
+    $('body').on('click', '#premium_off', function () {
+      var id = $(this).data("id");
+      $.ajax({
+        type: "get",
+        url: "{{ URL::current() }}/premium_off/"+id,
+        processing: true,
+        serverSide: true,
+        success: function (data) {
+          var oTable = $('#exilednoname').dataTable();
+          oTable.fnDraw(false);
+          toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true, };
+          toastr.success("{{ trans('default.notification.success.default-enable') }}");
+        },
+        error: function (data) {
+          toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true, };
+          toastr.error("{{ trans('default.notification.error.restrict') }}!");
+        }
+      });
+    });
+
     $('.delete-all').on('click', function(e) {
       var exilednonameArr = [];
       $(".selected").each(function() {

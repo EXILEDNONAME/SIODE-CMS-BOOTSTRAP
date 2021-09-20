@@ -47,11 +47,11 @@ class GlobalController extends Controller {
     if (!empty($theme->id) && $theme->id == 2 ) {
       $general = $this->modelGeneral::first();
       $about = $this->modelSectionAbout::first();
-      $client = $this->modelSectionClient::get();
+      $client = $this->modelSectionClient::where('active', 1)->get();
       $count = $this->modelSectionCount::first();
-      $pricing = $this->modelSectionPricing::get();
-      $service = $this->modelSectionService::get();
-      $team = $this->modelSectionTeam::get();
+      $pricing = $this->modelSectionPricing::where('active', 1)->get();
+      $service = $this->modelSectionService::where('active', 1)->get();
+      $team = $this->modelSectionTeam::where('active', 1)->get();
       $testimonial = $this->modelSectionTestimonial::get();
       return view($this->path . '.theme.bizland.index', compact('general', 'about', 'client', 'count', 'pricing', 'service', 'team', 'testimonial'))->render();
     }

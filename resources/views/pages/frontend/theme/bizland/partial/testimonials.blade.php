@@ -3,7 +3,7 @@
     <div class="owl-carousel testimonials-carousel">
 
       <div class="testimonial-item text-muted">
-        No Testimonials ...
+        Testimonials not found ...
       </div>
 
       @foreach($testimonial as $testimonial)

@@ -144,6 +144,26 @@ class PricingController extends Controller {
     return Response::json($data);
   }
 
+  public function default_on($id) {
+    $data = $this->model::where('id', $id)->update([ 'default' => 1 ]);
+    return Response::json($data);
+  }
+
+  public function default_off($id) {
+    $data = $this->model::where('id', $id)->update([ 'default' => 2 ]);
+    return Response::json($data);
+  }
+
+  public function premium_on($id) {
+    $data = $this->model::where('id', $id)->update([ 'premium' => 1 ]);
+    return Response::json($data);
+  }
+
+  public function premium_off($id) {
+    $data = $this->model::where('id', $id)->update([ 'premium' => 2 ]);
+    return Response::json($data);
+  }
+
   public function status_done($id) {
     $data = $this->model::where('id', $id)->update([ 'status' => 1 ]);
     return Response::json($data);

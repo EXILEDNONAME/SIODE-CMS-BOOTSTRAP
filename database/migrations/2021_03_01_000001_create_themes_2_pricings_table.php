@@ -12,6 +12,7 @@ class CreateThemes2PricingsTable extends Migration {
       $table->integer('premium')->default(2);
       $table->string('name');
       $table->string('price');
+      $table->string('unit');
       $table->text('description')->nullable();
       $table->integer('active')->default(1);
       $table->integer('sort')->default(1);
