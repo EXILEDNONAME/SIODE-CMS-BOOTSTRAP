@@ -127,3 +127,14 @@ Route::group([
   Route::get('deleteall', 'TestimonialController@deleteall')->name('deleteall');
   Route::resource('/', 'TestimonialController')->parameters(['' => 'id']);
 });
+
+// SECTION - CONTACT-US
+Route::group([
+  'as' => 'system.main.t2.contact-us.',
+  'prefix' => 'dashboard/sections/contact-us',
+  'namespace' => 'Backend\Main\T2',
+], function(){
+  Route::get('/', 'ContactUsController@index')->name('index');
+  Route::post('store', 'ContactUsController@store')->name('store');
+  Route::post('update', 'ContactUsController@update')->name('update');
+});

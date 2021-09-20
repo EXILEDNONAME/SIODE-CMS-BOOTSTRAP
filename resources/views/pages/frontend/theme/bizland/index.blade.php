@@ -70,11 +70,11 @@
     @include('pages.frontend.theme.bizland.partial.team')
     @include('pages.frontend.theme.bizland.partial.testimonials')
     @include('pages.frontend.theme.bizland.partial.clients')
-    @include('pages.frontend.theme.bizland.partial.skills')
+    <!-- @include('pages.frontend.theme.bizland.partial.skills') -->
     @include('pages.frontend.theme.bizland.partial.services')
-    @include('pages.frontend.theme.bizland.partial.portfolio')
+    <!-- @include('pages.frontend.theme.bizland.partial.portfolio') -->
     @include('pages.frontend.theme.bizland.partial.pricing')
-    @include('pages.frontend.theme.bizland.partial.faq')
+    <!-- @include('pages.frontend.theme.bizland.partial.faq') -->
     @include('pages.frontend.theme.bizland.partial.contact')
   </main>
 

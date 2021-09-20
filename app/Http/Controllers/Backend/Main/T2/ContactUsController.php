@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Activitylog\Models\Activity;
 
-use App\Http\Requests\Backend\Main\Theme\StoreRequest;
-use App\Http\Requests\Backend\Main\Theme\UpdateRequest;
+use App\Http\Requests\Backend\System\Dummy\Table\General\StoreRequest;
+use App\Http\Requests\Backend\System\Dummy\Table\General\UpdateRequest;
 
-class CountController extends Controller {
+class ContactUsController extends Controller {
 
   /**
   **************************************************
@@ -22,19 +22,19 @@ class CountController extends Controller {
   **/
 
   public function __construct() {
-    $this->url = '/dashboard/sections/count';
+    $this->url = '/dashboard/sections/contact-us';
     $this->middleware('auth');
 
     if ( $this->middleware(['auth', 't2'])) {
-      $this->path = 'pages.backend.main.theme-2.section.count';
-      $this->model = 'App\Models\Backend\Main\T2\Count';
+      $this->path = 'pages.backend.main.theme-2.section.contact-us';
+      $this->model = 'App\Models\Backend\Main\T2\ContactUs';
       $this->data = $this->model::get();
     }
   }
 
   /**
   **************************************************
-  * @return SECTION-COUNT
+  * @return SECTION-CONTACT-US
   **************************************************
   **/
 
