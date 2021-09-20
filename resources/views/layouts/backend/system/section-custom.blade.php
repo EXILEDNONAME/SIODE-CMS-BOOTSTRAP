@@ -6,7 +6,7 @@
     <div class="card card-custom gutter-b card-sticky" data-card="true" id="kt_page_sticky_card">
       <div class="card-header">
         <div class="card-title">
-          <h3 class="card-label"> {{ trans('default.page.edit') }} </h3>
+          <h3 class="card-label"> @stack('title') </h3>
         </div>
         <div class="card-toolbar">
           <a href="{{ URL::current() }}/../" class="btn btn-outline-primary font-weight-bolder mr-2">
@@ -15,7 +15,7 @@
           </a>
           <div class="btn-group">
             <button type="submit" class="btn btn-outline-primary" form="form-exilednoname">
-              <i class="flaticon2-paperplane"></i> <span class="font-weight-bolder"> Update </span>
+              <span class="font-weight-bolder"> Save </span>
             </button>
           </div>
         </div>

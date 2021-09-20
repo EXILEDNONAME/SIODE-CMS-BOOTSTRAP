@@ -4,9 +4,9 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateConfigurationSectionFeaturesTable extends Migration {
+class CreateThemes2FeaturesTable extends Migration {
   public function up() {
-    Schema::create('configuration_section_features', function (Blueprint $table) {
+    Schema::create('themes_2_features', function (Blueprint $table) {
       $table->increments('id');
       $table->string('content_1_title');
       $table->string('content_2_title');
@@ -26,6 +26,6 @@ class CreateConfigurationSectionFeaturesTable extends Migration {
   }
 
   public function down() {
-    Schema::dropIfExists('configuration_section_features');
+    Schema::dropIfExists('themes_2_features');
   }
 }

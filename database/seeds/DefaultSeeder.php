@@ -13,11 +13,5 @@ class DefaultSeeder extends Seeder {
     $this->call(Roles::class);
     $this->call(Users::class);
 
-    // T2 - DUMMY
-    $this->call(T2Generals::class);
-    $this->call(T2Abouts::class);
-    $this->call(T2Features::class);
-    $this->call(T2Teams::class);
-
   }
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title> {{ $general->name }} </title>
+  <title> {{ isset($general->name) ? $general->name : '-' }} </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
   <link href="/assets/frontend/bizland/img/favicon.png" rel="icon">
@@ -21,20 +21,20 @@
   <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex">
       <div class="contact-info mr-auto">
-        <i class="icofont-envelope"></i> <a href="mailto:{{ $general->email }}"> {{ $general->email }} </a>
-        <i class="icofont-phone"></i> {{ $general->phone }}
+        <i class="icofont-envelope"></i> <a href="mailto:{{ isset($general->email) ? $general->email : '-' }}"> {{ isset($general->email) ? $general->email : '-' }} </a>
+        <i class="icofont-phone"></i> {{ isset($general->phone) ? $general->phone : '-' }}
       </div>
       <div class="social-links">
-        <a href="{{ $general->social_twitter }}" class="twitter"><i class="icofont-twitter"></i></a>
-        <a href="{{ $general->social_facebook }}" class="facebook"><i class="icofont-facebook"></i></a>
-        <a href="{{ $general->social_instagram }}" class="instagram"><i class="icofont-instagram"></i></a>
+        <a href="{{ isset($general->social_twitter) ? $general->social_twitter : '-' }}" class="twitter"><i class="icofont-twitter"></i></a>
+        <a href="{{ isset($general->social_facebook) ? $general->social_facebook : '-' }}" class="facebook"><i class="icofont-facebook"></i></a>
+        <a href="{{ isset($general->social_instagram) ? $general->social_instagram : '-' }}" class="instagram"><i class="icofont-instagram"></i></a>
       </div>
     </div>
   </div>
 
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
-      <h1 class="logo mr-auto"><a href="index.html"> {{ $general->name }} <span>.</span></a></h1>
+      <h1 class="logo mr-auto"><a href="index.html"> {{ isset($general->name) ? $general->name : '-' }} <span>.</span></a></h1>
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="/">Home</a></li>
@@ -45,7 +45,8 @@
           <li><a href="#testimonials"> Testimonials </a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#pricing">Pricing</a></li>
-          <!-- <li><a href="#features">Features</a></li>
+          <li><a href="#features">Features</a></li>
+          <!--
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#contact">Contact</a></li>-->
         </ul>
@@ -55,8 +56,8 @@
 
   <section id="hero" class="d-flex align-items-center">
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
-      <h1> Welcome to <span> {{ $general->name }} </span></h1>
-      <h2> {{ $general->slogan }} </h2>
+      <h1> Welcome to <span> {{ isset($general->name) ? $general->name : '-' }} </span></h1>
+      <h2> {{ isset($general->slogan) ? $general->slogan : '-' }} </h2>
       <div class="d-flex">
         <a href="#about" class="btn-get-started scrollto"> Get Started </a>
         <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox btn-watch-video" data-vbtype="video" data-autoplay="true"> Watch Video <i class="icofont-play-alt-2"></i></a>
@@ -76,6 +77,7 @@
     @include('pages.frontend.theme.bizland.partial.pricing')
     <!-- @include('pages.frontend.theme.bizland.partial.faq') -->
     @include('pages.frontend.theme.bizland.partial.contact')
+    @include('pages.frontend.theme.bizland.partial.features')
   </main>
 
   <footer id="footer">
@@ -98,11 +100,11 @@
         <div class="row">
 
           <div class="col-lg-6 col-md-6 footer-contact">
-            <h3> {{ $general->name }} <span>.</span></h3>
+            <h3> {{ isset($general->name) ? $general->name : '-' }} <span>.</span></h3>
             <p>
-              {{ $general->address }}
-              <strong>Phone:</strong> {{ $general->phone }} <br>
-              <strong>Email:</strong> {{ $general->email }}<br>
+              {{ isset($general->address) ? $general->address : '-' }}
+              <strong>Phone:</strong> {{ isset($general->phone) ? $general->phone : '-' }} <br>
+              <strong>Email:</strong> {{ isset($general->email) ? $general->email : '-' }}<br>
             </p>
           </div>
 
@@ -121,9 +123,9 @@
             <h4> Our Social Networks </h4>
             <p> Follow Us </p>
             <div class="social-links mt-3">
-              <a href="{{ $general->social_twitter }}" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="{{ $general->social_facebook }}" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="{{ $general->social_instagram }}" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="{{ isset($general->social_twitter) ? $general->social_twitter : '-' }}" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="{{ isset($general->social_facebook) ? $general->social_facebook : '-' }}" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="{{ isset($general->social_instagram) ? $general->social_instagram : '-' }}" class="instagram"><i class="bx bxl-instagram"></i></a>
             </div>
           </div>
 
@@ -133,7 +135,7 @@
 
     <div class="container py-4">
       <div class="copyright">
-        &copy; Copyright <strong><span> {{ $general->name }} </span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>{{ isset($general->name) ? $general->name : '-' }} </span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->

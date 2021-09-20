@@ -33,6 +33,7 @@ class GlobalController extends Controller {
     $this->modelSectionTeam = 'App\Models\Backend\Main\T2\Team';
     $this->modelSectionTestimonial = 'App\Models\Backend\Main\T2\Testimonial';
     $this->modelSectionContactUs = 'App\Models\Backend\Main\T2\ContactUs';
+    $this->modelSectionFeature = 'App\Models\Backend\Main\T2\Feature';
   }
 
   /**
@@ -55,7 +56,8 @@ class GlobalController extends Controller {
       $team = $this->modelSectionTeam::where('active', 1)->get();
       $testimonial = $this->modelSectionTestimonial::get();
       $contactus = $this->modelSectionContactUs::first();
-      return view($this->path . '.theme.bizland.index', compact('general', 'about', 'client', 'count', 'pricing', 'service', 'team', 'testimonial', 'contactus'))->render();
+      $feature = $this->modelSectionFeature::first();
+      return view($this->path . '.theme.bizland.index', compact('general', 'about', 'client', 'count', 'pricing', 'service', 'team', 'testimonial', 'contactus', 'feature'))->render();
     }
 
     else if (!empty($theme->id) && $theme->id == 3 ) {

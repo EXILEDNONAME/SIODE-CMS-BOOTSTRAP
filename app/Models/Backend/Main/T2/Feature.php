@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Models\Backend\System;
+namespace App\Models\Backend\Main\T2;
 
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 
-class ConfigurationSectionFeature extends Model {
+class Feature extends Model {
 
   use LogsActivity;
 
-  protected $table = 'configuration_section_features';
+  protected $table = 'themes_2_features';
   protected $primaryKey = 'id';
   protected $guarded = ['id'];
 
